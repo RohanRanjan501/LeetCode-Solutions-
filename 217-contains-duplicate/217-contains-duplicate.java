@@ -13,15 +13,31 @@ class Solution {
         
     //optimized
         
-   Set<Integer> set = new HashSet<>();
+        
+      //  Hash Set
+//    Set<Integer> set = new HashSet<>();
+//     for(int i=0;i<nums.length;i++){
+//         if(!set.add(nums[i])){
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+    
+            
+            //Hash Map
+        
+        
+    Map<Integer,Integer> map = new HashMap<>();
     for(int i=0;i<nums.length;i++){
-        if(!set.add(nums[i])){
+        if(map.containsKey(nums[i])){
             return true;
+        } else{
+            map.put(nums[i],1);
         }
     }
     return false;
 }
-    
     
     
 }
