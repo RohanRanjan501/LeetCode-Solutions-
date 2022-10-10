@@ -17,8 +17,8 @@ class Solution {
         
         int[] list = new int[set2.size()];
         int a = 0;
-        for(int num:set2){
-            list[a++] = num;
+        for(int i:set2){
+            list[a++] = i;
         }
         return list;
         
