@@ -1,8 +1,10 @@
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
-        List<Integer> result = new LinkedList<Integer>();
-            if(matrix == null || matrix.length == 0) 
-                return result;   
+        
+        List<Integer> res = new ArrayList<Integer>(); 
+        if (matrix.length == 0) {
+            return res;
+        }
         
         int rowStart = 0;
         int rowEnd = matrix.length-1;
@@ -14,27 +16,27 @@ class Solution {
         switch(direction) {      
             case 0:   
                 for(int j = colStart; j <= colEnd; j++)           //Right
-                    result.add(matrix[rowStart][j]);
+                    res.add(matrix[rowStart][j]);
                 rowStart++;
                 break;
             case 1:                                              //Down
                 for(int j = rowStart; j <=rowEnd; j++) 
-                    result.add(matrix[j][colEnd])    ;
+                    res.add(matrix[j][colEnd])    ;
                 colEnd--;
                 break;
             case 2:
                 for(int j = colEnd; j >= colStart; j --)          //Left
-                    result.add(matrix[rowEnd][j]);            
+                    res.add(matrix[rowEnd][j]);            
                 rowEnd--;
                 break;
             case 3:
                 for(int j = rowEnd; j >= rowStart; j--)           //up
-                    result.add(matrix[j][colStart]);
+                    res.add(matrix[j][colStart]);
                 colStart++;  
                 break;
         }                                   
         direction = (direction+1)%4;                                                            
     }   
-    return result;      
+    return res;      
     }
 }
