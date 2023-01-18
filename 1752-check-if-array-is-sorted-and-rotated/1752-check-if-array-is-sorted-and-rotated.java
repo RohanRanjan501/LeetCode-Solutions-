@@ -9,7 +9,7 @@ class Solution {
                 flag+=1;
             }
             i++;    
-            }
+        }
         if(flag>1)
             return false;
         return true;   
