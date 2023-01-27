@@ -13,8 +13,9 @@ class Solution {
         for(int m = 0; m < s.length(); m++){
             char c = s.charAt(m);
             if(!stack.contains(c)){
-                while(!stack.isEmpty() && c < stack.peek() && map.get(stack.peek()) > m)
+                while(!stack.isEmpty() && c < stack.peek() && map.get(stack.peek()) > m){
                     stack.pop();
+                }
                 
                 stack.push(c);
             }
